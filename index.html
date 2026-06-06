@@ -1,29 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Eleprone</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-eqiv="refresh" content="100">
-<link rel="stylesheet" href="uni.css">
-</head>
-<body>
-<div id="back">
-<a id="1" style="margin-left: 0%;" href="https://www.youtube.com/@elepron">|Eleprone.com|</a>
-<a id="2" href="https://universal-gaming99.github.io/my-website/">|Home|</a>
-<a id="3">|Watch My Videos|</a>
-<input placeholder="Type here" >
-<button >Search my videos</button>
-</div>
-<div id="a299">
-	<p id="a9" style="text-align: center;">My Latest Video</p>
-	<video controls id="a8">
-		<source src="videoplayback (9).mp4" type="video/mp4">
-	</video>
+<title>Wafa Studios</title>
 
-</div>
+<style>
+    f{
+        color:#ff0000
+    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f0f0f;
+    color:white;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#ff0000;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00c3ff;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+    url("https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1600")
+    center/cover;
+}
+
+.hero h1{
+    font-size:75px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:22px;
+    max-width:700px;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    margin:10px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.primary{
+    background:#00c3ff;
+    color:white;
+}
+
+.secondary{
+    border:2px solid #00c3ff;
+    color:#00c3ff;
+}
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+    color:#00c3ff;
+}
+
+.about{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.games{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#181818;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.play-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 24px;
+    background:#00c3ff;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.play-btn:hover{
+    background:#0099cc;
+    transform:translateY(-2px);
+}
+
+.status{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:20px;
+    margin-top:10px;
+    font-size:14px;
+}
+
+.released{
+    background:#1f7a1f;
+}
+
+.dev{
+    background:#b57f00;
+}
+
+.coming{
+    background:#444;
+}
+
+.news{
+    display:grid;
+    gap:20px;
+}
+
+.news-box{
+    background:#181818;
+    padding:25px;
+    border-radius:10px;
+}
+
+.community{
+    text-align:center;
+}
+
+.community a{
+    display:inline-block;
+    margin:10px;
+    color:#00c3ff;
+    text-decoration:none;
+    font-size:20px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#181818;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:50px;
+}
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    gap:15px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Universal DEVV Studio</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+    <h1>Universal DEVV Studio</h1>
+
+    <p>
+    Founded by <f><strong>Arnav</strong> and <strong>Allesandro</strong></f>, Universal DEVV Studio is a creative Roblox development team 
+    dedicated to building fun, original, and unforgettable experiences for players. 
+    We design unique games that make Roblox even better — blending creativity, teamwork, and innovation. 
+    Our hit game <em>Find Him</em> received love from players, inspiring us to keep crafting fresh adventures 
+    that bring joy and excitement to the community.
+    </p>
+
+    <div class="buttons">
+        <a href="#games" class="btn primary">Our Games</a>
+        <a href="#about" class="btn secondary">Learn More</a>
+    </div>
+
+</section>
+
+<section id="about">
+
+    <h2 class="section-title" style="color: blue">About Us</h2>
+
+    <div class="about">
+        <b>Universal DEVV Studio</b> is a creative Roblox game studio founded by <b>Arnav and Allesandro</b>, two passionate developers working together to bring players unforgettable experiences.
+We build unique, fun, and engaging games that make Roblox even better for everyone.
+Our studio focuses on originality — crafting adventures that stand out from the crowd.
+One of our creations, <em>Find Him</em>, received love from players and inspired us to keep pushing boundaries.
+We’re constantly working on new, innovative projects to deliver more excitement and creativity to the Roblox community.
+    </div>
+
+</section>
+
+<section id="games">
+
+    <h2 class="section-title" style="color: yellow;">Our Games</h2>
+
+    <div class="games">
+
+        <div class="card">
+            <img src="FindHim_LOGO.png">
+
+            <div class="card-content">
+                <h3>Find Him</h3>
+
+                <p>
+                    Search, explore, and uncover secrets in our
+                    successful mystery adventure.
+                </p>
+
+                <a href="https://www.roblox.com/games/12657892692/Find-him" class="play-btn">
+                    ▶ Play Now
+                </a>
+
+                <br><br>
+
+                <span class="status released">Released</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="INDEVELOPMENT GAME.png">
+
+            <div class="card-content">
+                <h3>Upcoming Game</h3>
+
+                <p>
+                    An upcoming Game currently under development.
+                </p>
+
+                <span class="status dev">In Development</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="UPCOMING GAMES.png">
+
+            <div class="card-content">
+                <h3>Upcoming Game</h3>
+
+                <p>
+                    A future Game we are excited to reveal.
+                </p>
+
+                <span class="status coming">Coming Soon</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="news">
+
+    <h2 class="section-title" style="color: greenyellow;">Latest News</h2>
+
+    <div class="news">
+
+        <div class="news-box">
+            🎉 Find Him continues to grow and reach new players.
+        </div>
+
+        <div class="news-box">
+            🚧 Development has started on our next major title.
+        </div>
+
+        <div class="news-box">
+            📢 More announcements coming soon.
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <h2 class="section-title">Join Our Community</h2>
+
+    <div class="community">
+        <a href="https://discord.gg/JPe6b3GmTN">Discord</a>
+        <a href="https://youtube.com/@universalgaming99?si=6yIbNUrSz2JjzF7w">YouTube</a>
+        <a href="#">Instagram</a>
+        <a href="#">X / Twitter</a>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Universal DEVV Stduio. All Rights Reserved.
+</footer>
 
 </body>
 </html>
-
-
