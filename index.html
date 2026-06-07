@@ -6,6 +6,67 @@
 <title>Universal DEVV Studio</title>
 
 <style>
+    /* ===== 3D EFFECTS ===== */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    transform-style:preserve-3d;
+    transition:transform .15s linear;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(
+        circle at var(--x,50%) var(--y,50%),
+        rgba(0,195,255,.25),
+        transparent 40%
+    );
+    pointer-events:none;
+}
+
+.card{
+    background:#181818;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.4s;
+    animation:float 5s ease-in-out infinite;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 0 25px rgba(0,195,255,.5);
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
+}
+
+.btn{
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px) scale(1.05);
+    box-shadow:0 0 20px rgba(0,195,255,.6);
+}
+
+.news-box{
+    transition:.3s;
+}
+
+.news-box:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px rgba(0,195,255,.3);
+}
+
+.logo{
+    text-shadow:0 0 15px red;
+}
     f{
         color:#ff0000
     }
@@ -380,6 +441,52 @@ We’re constantly working on new, innovative projects to deliver more excitemen
 <footer>
     © 2026 Universal DEVV Stduio. All Rights Reserved.
 </footer>
+<script>
 
+const hero = document.querySelector(".hero");
+
+document.addEventListener("mousemove",(e)=>{
+
+    let x = (window.innerWidth/2 - e.clientX)/40;
+    let y = (window.innerHeight/2 - e.clientY)/40;
+
+    hero.style.backgroundPosition =
+        `${50 + x}% ${50 + y}%`;
+
+    hero.style.transform =
+        `rotateY(${-x/2}deg) rotateX(${y/2}deg)`;
+
+    hero.style.setProperty("--x", e.clientX + "px");
+    hero.style.setProperty("--y", e.clientY + "px");
+});
+
+const revealElements =
+document.querySelectorAll(".card,.news-box,.about");
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.animate([
+                {
+                    opacity:0,
+                    transform:"translateY(50px)"
+                },
+                {
+                    opacity:1,
+                    transform:"translateY(0)"
+                }
+            ],{
+                duration:800,
+                fill:"forwards"
+            });
+        }
+    });
+});
+
+revealElements.forEach(el=>{
+    observer.observe(el);
+});
+
+</script>
 </body>
 </html>
